@@ -70,7 +70,7 @@ function subArticle()
 				</tr>
 				<tr>
 					<th>鍵場所</th>
-					<td><input type="text" name="sKeyPlace" value="<?php print $sKeyPlace ?>" size="30" /></td>
+					<td><input type="text" name="sKeyPlace" value="<?php print $sKagPlace ?>" size="30" /></td>
 					<th>営業担当者</th>
 					<td><input type="text" name="sSellCharge" value="<?php print $sSellCharge ?>" /></td>
 				</tr>
@@ -160,7 +160,7 @@ function subArticleEdit()
 	$sDueDTFrom   = htmlspecialchars($_REQUEST['sDueDTFrom']);
 	$sDueDTTo     = htmlspecialchars($_REQUEST['sDueDTTo']);
 	$sSellCharge  = htmlspecialchars($_REQUEST['sSellCharge']);
-
+	$sDrawing = htmlspecialchars($_REQUEST['sDrawing']); // 追加
 	$orderBy = $_REQUEST['orderBy'];
 	$orderTo = $_REQUEST['orderTo'];
 	$sPage   = $_REQUEST['sPage'];
@@ -210,6 +210,8 @@ function subArticleEdit()
 		<input type="hidden" name="orderTo" value="<?php print $orderTo ?>" />
 		<input type="hidden" name="sPage" value="<?php print $sPage ?>" />
 		<input type="hidden" name="articleNo" value="<?php print $articleNo ?>" />
+		<input type="hidden" name="sDrawing" value="<?php print $sDrawing ?>" /> <!--追加-->
+
 
 		<table border="0" cellpadding="5" cellspacing="1">
 			<tr>
