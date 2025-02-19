@@ -216,8 +216,8 @@ function subArticleEdit()
 			<tr>
 				<th>除外</th>
 				<td>
-					<input type="radio" name="del" value="1" checked="checked" /> 非除外
-					<input type="radio" name="del" value="0" <?php if ($del == '0') print ' checked="checked"' ?> /> 除外
+					<input type="checkbox" name="del" value="1" checked="checked" /> 非除外
+					<input type="checkbox" name="del" value="0" <?php if ($del == '0') print ' checked="checked"' ?> /> 除外
 				</td>
 			</tr>
 			<tr>
