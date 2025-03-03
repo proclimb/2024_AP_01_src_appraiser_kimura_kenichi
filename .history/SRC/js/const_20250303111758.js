@@ -29,7 +29,7 @@ function fnConstEditCheck() {
 	if (isLength(100, "給湯", form.hotWater)) { return; }
 	if (!fnYMDCheck("正しい現調日付", form.siteDate)) { return; }
 	if (isLength(100, "届出用紙", form.leavingForm)) { return; }
-	if (!fnYMDCheck("正しい届出期日", form.leavingDT)) { return; }
+	if (fnYMDCheck("正しい届出期日", form.leavingDT)) { return; }
 	if (isLength(100, "管理会社", form.manageCompany)) { return; }
 	if (isLength(100, "管理室", form.floorPlan)) { return; }
 	if (isLength(100, "前所有者", form.formerOwner)) { return; }
