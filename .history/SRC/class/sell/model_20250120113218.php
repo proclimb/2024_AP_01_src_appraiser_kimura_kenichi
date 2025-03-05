@@ -126,8 +126,7 @@ function fnSqlSellInsert($param)
     $sql .= "'" . $param["sellNo"] . "','" . $param["searchDT"] . "','" . $param["article"] . "','" . $param["address"] . "',"
         . "'" . $param["station"] . "','" . $param["foot"] . "','" . $param["years"] . "','" . $param["floor"] . "',"
         . "'" . $param["area"] . "','" . $param["seller"] . "','" . $param["price"] . "','" . $param["note"] . "',"
-        . "CURRENT_TIMESTAMP,CURRENT_TIMESTAMP,1)";
-
+        . "CURRENT_TIMESTAMP,CURRENT_TIMESTAMP)";
 
     return $sql;
 }
