@@ -61,7 +61,7 @@ function fnSellEditCheck() {
 		alert('階数を入力してください');
 		return;
 	}
-	if (tmp.length > 2 || tmp.match(/[^0-9]+/)) {
+	if (tmp.length > 0 && !tmp.match(/^([0-9]{1,3})(\.[0-9]{1,2})?$/)) {
 		alert('階数は2桁以内の半角数字で入力してください');
 		return;
 	}
@@ -71,7 +71,7 @@ function fnSellEditCheck() {
 		alert('専有面積を入力してください');
 		return;
 	}
-	if (tmp.length > 0 && !tmp.match(/^([0-9]{1,3})(\.[0-9]{1,2})?$/)) {
+	if (tmp.length > 6 || tmp.match(/[^0-9\.]+/)) {
 		alert('専有面積は3桁以内（小数点以下2桁以内）の半角数字で入力してください');
 		return;
 	}

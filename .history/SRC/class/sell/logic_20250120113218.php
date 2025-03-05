@@ -87,7 +87,6 @@ function subSellEditComplete()
     } else {
         $param["sellNo"] = fnNextNo('SELL');
         $sql = fnSqlSellInsert($param);
-        // var_dump($sql);
         $res = mysqli_query($param["conn"], $sql);
     }
 
