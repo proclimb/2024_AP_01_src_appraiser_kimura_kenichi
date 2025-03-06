@@ -218,10 +218,8 @@ function subSellEditView($param)
 		<table border="0" cellpadding="5" cellspacing="1">
 			<tr>
 				<th>日付<span class="red">（必須）</span></th>
-				<td><input type="text" name="searchDT" value="<?php echo date('Y/m/d', strtotime($param['searchDT'])); ?>" /><a href="javascript:cal1.write();" onChange="cal1.getFormValue(); cal1.hide();"><img src="./images/b_calendar.png"></a><span id="cal1"></td>
+				<td><input type="text" name="searchDT" value="<?php print $param["searchDT"] ?>" /> <a href="javascript:cal1.write();" onChange="cal1.getFormValue(); cal1.hide();"><img src="./images/b_calendar.png"></a><span id="cal1"></td>
 			</tr>
-
-
 			<tr>
 				<th>物件名<span class="red">（必須）</span></th>
 				<td><input type="text" name="article" value="<?php print $param["article"] ?>" /></td>
