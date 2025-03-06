@@ -219,7 +219,7 @@ function subSellEditView($param)
 			<tr>
 				<th>日付<span class="red">（必須）</span></th>
 				<td>
-					<input type="text" name="searchDT" value="<?php echo isset($param['searchDT']) ? date('Y/m/d', strtotime($param['searchDT'])) : ''; ?>" />
+					<input type="text" name="searchDT" value="<?php echo isset($param['searchDT']) ? date('Y/m/d', strtotime($param['searchDT'])) : ''; ?>" placeholder="YYYY/MM/DD" />
 					<a href="javascript:cal1.write();" onChange="cal1.getFormValue(); cal1.hide();"><img src="./images/b_calendar.png"></a>
 					<span id="cal1"></span>
 				</td>
