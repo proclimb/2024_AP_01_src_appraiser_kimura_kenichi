@@ -69,7 +69,7 @@ function fnGuideMove(muki, articleNo) {
 		var articleKey = $(obj.children()[2]).html();
 
 		// 登録リストに保存(右側に移動)
-		tags = "<tr id=\"r" + articleNo + "\">";
+		var tags = "<tr id=\"r" + articleNo + "\">";
 
 		// 削除ボタンの作成
 		tags += "<td>";
@@ -99,16 +99,16 @@ function fnGuideMove(muki, articleNo) {
 		var obj = $("#r" + articleNo);
 
 		// 登録リストから削除(左側に移動)
-		tags = "<tr id=\"s" + articleNo + "\">";
+		var tags = "<tr id=\"s" + articleNo + "\">";
 
 		// 物件名の作成
-		tags += "<td>" + $(obj.children()[1]).text() + "</td>";
+		tags += "<td>" + $(obj.children()[0]).text() + "</td>";
 
 		// 部屋番号の作成
-		tags += "<td>" + $(obj.children()[2]).text() + "</td>";
+		tags += "<td>" + $(obj.children()[1]).text() + "</td>";
 
 		// 鍵情報の作成
-		tags += "<td>" + $(obj.children()[3]).html() + "</td>";
+		tags += "<td>" + $(obj.children()[2]).html() + "</td>";
 
 		// 登録ボタンの作成
 		tags += "<td><input type=\"button\" value=\"&gt;\" /></td>";

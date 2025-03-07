@@ -102,13 +102,13 @@ function fnGuideMove(muki, articleNo) {
 		tags = "<tr id=\"s" + articleNo + "\">";
 
 		// 物件名の作成
-		tags += "<td>" + $(obj.children()[1]).text() + "</td>";
+		tags += "<td>" + $(obj.children()[0]).text() + "</td>";
 
 		// 部屋番号の作成
-		tags += "<td>" + $(obj.children()[2]).text() + "</td>";
+		tags += "<td>" + $(obj.children()[1]).text() + "</td>";
 
 		// 鍵情報の作成
-		tags += "<td>" + $(obj.children()[3]).html() + "</td>";
+		tags += "<td>" + $(obj.children()[2]).html() + "</td>";
 
 		// 登録ボタンの作成
 		tags += "<td><input type=\"button\" value=\"&gt;\" /></td>";

@@ -86,7 +86,7 @@ function fnGuideMove(muki, articleNo) {
 		tags += "<td>" + articleRoom + "</td>";
 
 		// 鍵情報の作成
-		tags += "<td>" + articleKey; + "</td>";
+		tags += "<td>" + articleKey;
 		tags += "</tr>";
 
 		// 登録側に追加
@@ -124,8 +124,8 @@ function fnGuideMove(muki, articleNo) {
 	// 色の再設定
 	$("#search tr").filter(":odd").find("td").attr("class", "list_td1");
 	$("#search tr").filter(":even").find("td").attr("class", "list_td2");
-	$("#regist tr").filter(":odd").find("td").attr("class", "list_td1");
-	$("#regist tr").filter(":even").find("td").attr("class", "list_td2");
+	$("#regist tr").filter(":odd").find(".td").attr("class", "list_td1");
+	$("#regist tr").filter(":even").find(".td").attr("class", "list_td2");
 }
 
 
