@@ -4,11 +4,11 @@
 function fnGuideEditCheck() {
 
 	var cnt = document.form.cnt.value;
-	for (i = 0; i < cnt; i++) {
+	for (var i = 1; i <= cnt; i++) {
 
 		var msg = "";
 		if (cnt > 1) { msg = (i + 1) + "件目の"; }
-		tmp = getEditObject(i, "guideStartDT");
+		var tmp = getEditObject(i, "guideStart");
 		if (tmp.value == '') { alert(msg + "案内日(開始日付)を入力してください"); return; }
 		if (!fnYMDCheck(msg + "開始日付には正しい日付", tmp)) { return; }
 		if (!fnYMDCheck(msg + "開始日付には正しい日付", getEditObject(i, "guideStartDT"))) { return; }
@@ -24,8 +24,13 @@ function fnGuideEditCheck() {
 	}
 
 	if (confirm('この内容で登録します。よろしいですか？')) {
-		form.act.value = 'guideEditComplete';
-		form.submit();
+		document.form.act.value = 'guideEditComplete';
+		document.form.submit();
+
+
+
+		//form.act.value = 'guideEditComplete';
+		//form.submit();
 	}
 }
 
