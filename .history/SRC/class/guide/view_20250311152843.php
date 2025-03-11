@@ -31,9 +31,9 @@ function subGuideView($param)
 				<tr>
 					<th>案内日</th>
 					<td>
-						<input type="text" name="sGuideDTFrom" value="<?php print $param["sGuideDTFrom"] ?>" size="15">
+						<input type="text" name="sGuideDTFrom" value="<?php print $param["sGuideDTFrom"] ?>" size="15" />
 						<a href="javascript:cal1.write();" onChange="cal1.getFormValue(); cal1.hide();"><img src="./images/b_calendar.png"></a><span id="cal1"></span>～
-						<input type="text" name="sGuideDTTo" value="<?php print $param["sGuideDTTo"] ?>" size="15">
+						<input type="text" name="sGuideDTTo" value="" size="15" />
 						<a href="javascript:cal2.write();" onChange="cal2.getFormValue(); cal2.hide();"><img src="./images/b_calendar.png"></a><span id="cal2"></span>
 					</td>
 					<th>TEL</th>
