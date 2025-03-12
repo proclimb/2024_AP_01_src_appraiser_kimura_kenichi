@@ -5,6 +5,13 @@
 function subGuideView($param)
 {
 ?>
+	<?php
+	// フォームデータをサニタイズする
+	foreach ($param as $key => $value) {
+		$param[$key] = htmlspecialchars($value, ENT_QUOTES, 'UTF-8');
+	}
+	?>
+
 	<script type="text/javascript" src="./js/guide.js"></script>
 	<script>
 		var cal1 = new JKL.Calendar("cal1", "form", "sGuideDTFrom");
@@ -28,12 +35,6 @@ function subGuideView($param)
 
 		<div class="search">
 			<table border="0" cellpadding="2" cellspacing="0">
-				<?php
-				// フォームデータをサニタイズする
-				foreach ($param as $key => $value) {
-					$param[$key] = htmlspecialchars($value, ENT_QUOTES, 'UTF-8');
-				}
-				?>
 				<tr>
 					<th>案内日</th>
 					<td>
