@@ -134,7 +134,7 @@ function subGuideView($param)
 			<?php
 			$sql = fnSqlGuideList(1, $param);
 			$res = mysqli_query($param["conn"], $sql);
-			// var_dump($sql);
+			var_dump($sql);
 			$i = 0;
 			while ($row = mysqli_fetch_array($res)) {
 				$guideNo      = htmlspecialchars($row["GUIDENO"]);
