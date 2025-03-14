@@ -51,10 +51,9 @@ function fnFManagerViewEditCheck() {
 	}
 
 	tmp = form.pdfFile.value;
-	if (tmp.slice(-4) != '.pdf' && tmp.slice(-4) != '.PDF') {
+	if (!form.pdfNo.value && tmp.slice(-4) != '.pdf' && tmp.slice(-4) != '.PDF') {
 		alert('PDFファイルを指定してください');
 		return;
-
 	}
 
 	if (confirm('この内容で登録します。よろしいですか？')) {
