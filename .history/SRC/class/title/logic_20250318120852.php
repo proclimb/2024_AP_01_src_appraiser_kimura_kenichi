@@ -193,7 +193,6 @@ function subFTitleDelete()
         $res = mysqli_query($conn, $sql);
     }
     subTitlePage1(); // ← 追加
-}
 
 
 
