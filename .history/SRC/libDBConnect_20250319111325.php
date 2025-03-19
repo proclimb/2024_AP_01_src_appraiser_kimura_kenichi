@@ -3,10 +3,10 @@
 //
 // ログイン
 //
-function fnSqlLogin($id)
+function fnSqlLogin($id, $pw)
 {
     $id = addslashes($id);
-    $sql = "SELECT USERNO,AUTHORITY PASSWORD FROM TBLUSER";
+    $sql = "SELECT USERNO,AUTHORITY FROM TBLUSER";
     $sql .= " WHERE DEL = 1";
     $sql .= " AND ID = '$id'";
 
@@ -77,7 +77,7 @@ function fnSqlAdminUserInsert($userNo, $name, $id, $password, $authority)
 function fnSqlAdminUserDelete($userNo)
 {
     $sql = "UPDATE TBLUSER";
-    $sql .= " SET DEL = -1";
+    $sql .= " SET DEL = 0";
     $sql .= ",UPDT = CURRENT_TIMESTAMP";
     $sql .= " WHERE USERNO = '$userNo'";
 

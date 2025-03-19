@@ -3,12 +3,13 @@
 //
 // ログイン
 //
-function fnSqlLogin($id)
+function fnSqlLogin($id, $pw)
 {
     $id = addslashes($id);
-    $sql = "SELECT USERNO,AUTHORITY PASSWORD FROM TBLUSER";
+    $sql = "SELECT USERNO,AUTHORITY FROM TBLUSER";
     $sql .= " WHERE DEL = 1";
     $sql .= " AND ID = '$id'";
+    $sql .= " AND PASSWORD = '$pw'";
 
     return ($sql);
 }
@@ -41,15 +42,11 @@ function fnSqlAdminUserEdit($userNo)
 //
 function fnSqlAdminUserUpdate($userNo, $name, $id, $password, $authority)
 {
-    if ($password !== "") {
-        $pass = password_hash($password, PASSWORD_DEFAULT);
-    }
+    $pass = addslashes(hash('adler32', $password));
     $sql = "UPDATE TBLUSER";
     $sql .= " SET NAME = '$name'";
     $sql .= ",ID = '$id'";
-    if ($password !== "") {
-        $sql .= ",PASSWORD = '$pass'";
-    }
+    $sql .= ",PASSWORD = '$pass'";
     $sql .= ",AUTHORITY = '$authority'";
     $sql .= ",UPDT = CURRENT_TIMESTAMP";
     $sql .= " WHERE USERNO = '$userNo'";
@@ -62,7 +59,7 @@ function fnSqlAdminUserUpdate($userNo, $name, $id, $password, $authority)
 //
 function fnSqlAdminUserInsert($userNo, $name, $id, $password, $authority)
 {
-    $pass = password_hash($password, PASSWORD_DEFAULT);
+    $pass = addslashes(hash('adler32', $password));
     $sql = "INSERT INTO TBLUSER(";
     $sql .= "USERNO,NAME,ID,PASSWORD,AUTHORITY,INSDT,UPDT,DEL";
     $sql .= ")VALUES(";
@@ -77,7 +74,7 @@ function fnSqlAdminUserInsert($userNo, $name, $id, $password, $authority)
 function fnSqlAdminUserDelete($userNo)
 {
     $sql = "UPDATE TBLUSER";
-    $sql .= " SET DEL = -1";
+    $sql .= " SET DEL = 0";
     $sql .= ",UPDT = CURRENT_TIMESTAMP";
     $sql .= " WHERE USERNO = '$userNo'";
 

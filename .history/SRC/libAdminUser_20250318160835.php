@@ -8,7 +8,6 @@ function subAdminUser()
 
 	subMenu();
 ?>
-	<script type="text/javascript" src="./js/adminUser.js"></script>
 	<h1>ユーザー情報画面</h1>
 
 	<form name="form" id="form" action="index.php" method="post">
@@ -41,7 +40,7 @@ function subAdminUser()
 					<tr>
 						<td class="list_td<?php print $i; ?>"><a href="javascript:form.act.value='adminUserEdit';form.userNo.value=<?php print $userNo; ?>;form.submit();"><?php print $name; ?></a></td>
 						<td class="list_td<?php print $i; ?>"><?php print $id; ?></td>
-						<td class="list_td<?php print $i; ?>">
+						<td class="list_td<?php print $i; ?>"><?php print $password; ?></td>
 						<td class="list_td<?php print $i; ?>"><?php print fnAuthorityName($authority); ?></td>
 						<td class="list_td<?php print $i; ?>">
 							<a href="javascript:fnAdminUserDeleteCheck(<?php print $userNo; ?>,'<?php print $name; ?>');">削除</a>
@@ -139,11 +138,13 @@ function subAdminUserEditComplete()
 	$password  = mysqli_real_escape_string($conn, $_REQUEST['password']);
 	$authority = mysqli_real_escape_string($conn, $_REQUEST['auth']);
 
+	$hashedPassword = password_hash($password, PASSWORD_BCRYPT);
+
 	if ($userNo) {
-		$sql = fnSqlAdminUserUpdate($userNo, $name, $id, $password, $authority);
+		$sql = fnSqlAdminUserUpdate($userNo, $name, $id, $hashedPassword, $authority);
 		$res = mysqli_query($conn, $sql);
 	} else {
-		$sql = fnSqlAdminUserInsert(fnNextNo('USER'), $name, $id, $password, $authority);
+		$sql = fnSqlAdminUserInsert(fnNextNo('USER'), $name, $id, $hashedPassword, $authority);
 		$res = mysqli_query($conn, $sql);
 	}
 
